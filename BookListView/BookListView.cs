@@ -198,6 +198,15 @@ namespace BookListView
                 selectedImagePath = ofd.FileName;
             }
         }
+
+        private void lstBorrow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                lstBorrow_DoubleClick(sender, e);
+            }
+        }
     }
 
     public class Book

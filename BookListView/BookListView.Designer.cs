@@ -45,6 +45,7 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.pnlAdd = new System.Windows.Forms.Panel();
             this.grpAdd = new System.Windows.Forms.GroupBox();
+            this.btnPic = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtKind = new System.Windows.Forms.TextBox();
             this.lblKind = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.lblAuthor = new System.Windows.Forms.Label();
             this.txtBookName = new System.Windows.Forms.TextBox();
             this.lblBookName = new System.Windows.Forms.Label();
-            this.btnPic = new System.Windows.Forms.Button();
             this.grpView.SuspendLayout();
             this.grpBorrow.SuspendLayout();
             this.pnlTools.SuspendLayout();
@@ -114,8 +114,9 @@
             this.lstBorrow.Location = new System.Drawing.Point(11, 29);
             this.lstBorrow.Name = "lstBorrow";
             this.lstBorrow.Size = new System.Drawing.Size(263, 294);
-            this.lstBorrow.TabIndex = 0;
+            this.lstBorrow.TabIndex = 2;
             this.lstBorrow.DoubleClick += new System.EventHandler(this.lstBorrow_DoubleClick);
+            this.lstBorrow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstBorrow_KeyDown);
             // 
             // pnlTools
             // 
@@ -140,7 +141,7 @@
             this.lvwBooks.Name = "lvwBooks";
             this.lvwBooks.Size = new System.Drawing.Size(451, 323);
             this.lvwBooks.SmallImageList = this.imgS;
-            this.lvwBooks.TabIndex = 3;
+            this.lvwBooks.TabIndex = 0;
             this.lvwBooks.UseCompatibleStateImageBehavior = false;
             this.lvwBooks.ItemActivate += new System.EventHandler(this.lvwBooks_ItemActivate);
             // 
@@ -220,7 +221,7 @@
             this.txtSearch.Location = new System.Drawing.Point(226, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(196, 25);
-            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
@@ -265,6 +266,17 @@
             this.grpAdd.TabStop = false;
             this.grpAdd.Text = "【管理員功能】新書上架";
             // 
+            // btnPic
+            // 
+            this.btnPic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPic.Location = new System.Drawing.Point(562, 25);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(88, 31);
+            this.btnPic.TabIndex = 7;
+            this.btnPic.Text = "選擇書封";
+            this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -273,7 +285,7 @@
             this.btnAdd.Location = new System.Drawing.Point(661, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 31);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "上架";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -284,7 +296,7 @@
             this.txtKind.Location = new System.Drawing.Point(422, 28);
             this.txtKind.Name = "txtKind";
             this.txtKind.Size = new System.Drawing.Size(130, 25);
-            this.txtKind.TabIndex = 5;
+            this.txtKind.TabIndex = 6;
             // 
             // lblKind
             // 
@@ -302,7 +314,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(242, 29);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(130, 25);
-            this.txtAuthor.TabIndex = 3;
+            this.txtAuthor.TabIndex = 5;
             // 
             // lblAuthor
             // 
@@ -320,7 +332,7 @@
             this.txtBookName.Location = new System.Drawing.Point(62, 28);
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.Size = new System.Drawing.Size(130, 25);
-            this.txtBookName.TabIndex = 1;
+            this.txtBookName.TabIndex = 4;
             // 
             // lblBookName
             // 
@@ -331,17 +343,6 @@
             this.lblBookName.Size = new System.Drawing.Size(47, 17);
             this.lblBookName.TabIndex = 0;
             this.lblBookName.Text = "書名：";
-            // 
-            // btnPic
-            // 
-            this.btnPic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPic.Location = new System.Drawing.Point(562, 25);
-            this.btnPic.Name = "btnPic";
-            this.btnPic.Size = new System.Drawing.Size(88, 31);
-            this.btnPic.TabIndex = 7;
-            this.btnPic.Text = "選擇書封";
-            this.btnPic.UseVisualStyleBackColor = true;
-            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
             // 
             // frmBookListView
             // 
@@ -354,6 +355,7 @@
             this.Controls.Add(this.pnlAdd);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.MinimumSize = new System.Drawing.Size(760, 300);
             this.Name = "frmBookListView";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
